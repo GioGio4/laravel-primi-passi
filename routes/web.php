@@ -15,4 +15,27 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name("Homepage");
+
+Route::get('/filmlist', function () {
+    $films = [
+        'Luther',
+        'Era ora',
+        'Megan',
+        'Poker face'
+    ];
+
+    return view('filmlist', compact('films'));
+})->name("filmlist");
+
+Route::get('/serieslist', function () {
+
+    $series = [
+        'Chapelwate',
+        'You',
+        'Lupin',
+        'The walking dead'
+    ];
+
+    return view('serieslist', compact('series'));
+})->name("Serie");
